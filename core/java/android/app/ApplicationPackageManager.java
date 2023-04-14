@@ -861,6 +861,11 @@ public class ApplicationPackageManager extends PackageManager {
                 packageName.contains("com.google.android.apps.nexuslauncher") &&
                 Arrays.asList(featuresTensor).contains(name)) {
            return false;
+        } else if (packageName != null &&
+                packageName.contains("com.google.android.as") &&
+                (name.contains("PIXEL_2022_EXPERIENCE") ||
+                name.contains("PIXEL_2022_MIDYEAR_EXPERIENCE"))) {
+            return false;
         }
 
         return mHasSystemFeatureCache.query(new HasSystemFeatureQuery(name, version));
