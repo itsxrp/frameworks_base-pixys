@@ -223,4 +223,7 @@
     <!-- The list of package IDs that are allowed to skip camera high frame rate checks. -->
     <string-array name="config_cameraHFRPrivAppList" translatable="false" />
 
+     <!-- Show Volume Panel to Left -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
+
 </resources>
