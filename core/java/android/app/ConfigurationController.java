@@ -184,7 +184,6 @@ class ConfigurationController {
             final Resources appResources = app.getResources();
             Typeface.updateDefaultFont(appResources);
             mResourcesManager.applyConfigurationToResources(config, compat);
-            Typeface.updateDefaultFont(appResources);
             updateLocaleListFromAppContext(app.getApplicationContext());
 
             if (mConfiguration == null) {
