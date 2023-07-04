@@ -6063,6 +6063,16 @@ public abstract class Context {
 
     /**
      * Use with {@link #getSystemService} to retrieve a
+     * {@link com.oplus.os.LinearmotorVibrator} for accessing linear motor vibrator state.
+     *
+     * @hide
+     * @see #getSystemService
+     * @see com.oplus.os.LinearmotorVibrator
+     */
+    public static final String LINEARMOTOR_VIBRATOR_SERVICE = "linearmotor";
+
+    /**
+     * Use with {@link #getSystemService} to retrieve a
      * {@link android.os.PocketManager} for accessing and listening to device pocket state.
      *
      * @hide
