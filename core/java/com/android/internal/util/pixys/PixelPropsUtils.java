@@ -58,7 +58,6 @@ public class PixelPropsUtils {
     private static final Map<String, Object> propsToChangeOP8P;
     private static final Map<String, Object> propsToChangeOP9P;
     private static final Map<String, Object> propsToChangeMI11;
-    private static final Map<String, Object> propsToChangeK30U;
     private static final Map<String, ArrayList<String>> propsToKeep;
 
     private static final String[] packagesToChangePixel7Pro = {
@@ -133,6 +132,11 @@ public class PixelPropsUtils {
             "com.gameloft.android.ANMP.GloftA9HM"
     };
 
+    private static final Map<String, Object> propsToChangeK30U;
+    private static final String[] packagesToChangeK30U = {
+            "com.pubg.imobile"
+    };
+
     private static final String[] packagesToChangeXP5 = {
             "com.tencent.tmgp.kr.codm",
             "com.garena.game.codm",
@@ -161,10 +165,6 @@ public class PixelPropsUtils {
             "com.levelinfinite.hotta.gp",
             "com.mobile.legends",
             "com.tencent.tmgp.sgame"
-    };
-
-    private static final String[] packagesToChangeK30U = {
-            "com.pubg.imobile"
     };
 
     // Codenames for currently supported Pixels by Google
