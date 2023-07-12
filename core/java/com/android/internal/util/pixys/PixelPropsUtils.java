@@ -54,7 +54,6 @@ public class PixelPropsUtils {
     private static final Map<String, Object> propsToChangePixel6Pro;
     private static final Map<String, Object> propsToChangePixel5;
     private static final Map<String, Object> propsToChangePixelXL;
-    private static final Map<String, Object> propsToChangeROG1;
     private static final Map<String, Object> propsToChangeXP5;
     private static final Map<String, Object> propsToChangeOP8P;
     private static final Map<String, Object> propsToChangeOP9P;
@@ -124,14 +123,17 @@ public class PixelPropsUtils {
             "com.google.android.apps.recorder"
     };
 
-    private static final String[] packagesToChangeROG1 = {
-            "com.dts.freefireth",
-            "com.dts.freefiremax",
-            "com.madfingergames.legends"
+    private static final Map<String, Object> propsToChangeROG6;
+    private static final String[] packagesToChangeROG6 = {
+            "com.activision.callofduty.shooter",
+            "com.madfingergames.legends",
+            "com.pearlabyss.blackdesertm",
+            "com.pearlabyss.blackdesertm.gl",
+            "com.ea.gp.fifamobile",
+            "com.gameloft.android.ANMP.GloftA9HM"
     };
 
     private static final String[] packagesToChangeXP5 = {
-            "com.activision.callofduty.shooter",
             "com.tencent.tmgp.kr.codm",
             "com.garena.game.codm",
             "com.vng.codmvn"
@@ -215,9 +217,11 @@ public class PixelPropsUtils {
         propsToChangePixelXL.put("PRODUCT", "marlin");
         propsToChangePixelXL.put("MODEL", "Pixel XL");
         propsToChangePixelXL.put("FINGERPRINT", "google/marlin/marlin:10/QP1A.191005.007.A3/5972272:user/release-keys");
-        propsToChangeROG1 = new HashMap<>();
-        propsToChangeROG1.put("MODEL", "ASUS_Z01QD");
-        propsToChangeROG1.put("MANUFACTURER", "asus");
+        propsToChangeROG6 = new HashMap<>();
+        propsToChangeROG6.put("BRAND", "asus");
+        propsToChangeROG6.put("MANUFACTURER", "asus");
+        propsToChangeROG6.put("DEVICE", "AI2201");
+        propsToChangeROG6.put("MODEL", "ASUS_AI2201");
         propsToChangeXP5 = new HashMap<>();
         propsToChangeXP5.put("MODEL", "SO-52A");
         propsToChangeOP8P = new HashMap<>();
@@ -341,9 +345,9 @@ public class PixelPropsUtils {
             if (!SystemProperties.getBoolean("persist.sys.pixelprops.games", false))
                 return;
 
-            if (Arrays.asList(packagesToChangeROG1).contains(packageName)) {
+            if (Arrays.asList(packagesToChangeROG6).contains(packageName)) {
                 if (DEBUG) Log.d(TAG, "Defining props for: " + packageName);
-                for (Map.Entry<String, Object> prop : propsToChangeROG1.entrySet()) {
+                for (Map.Entry<String, Object> prop : propsToChangeROG6.entrySet()) {
                     String key = prop.getKey();
                     Object value = prop.getValue();
                     setPropValue(key, value);
