@@ -1464,6 +1464,12 @@ public class SettingsProvider extends ContentProvider {
 
         final String callingPackage = getCallingPackage();
 
+           try {
+            if (!callingPackage.equals("com.google.android.gms")) {
+                enforceWritePermission(Manifest.permission.WRITE_DEVICE_CONFIG);
+            }
+        } catch (SecurityException e) {}
+
         // Perform the mutation.
         synchronized (mLock) {
             switch (operation) {
